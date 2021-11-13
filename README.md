@@ -1,3 +1,3 @@
 # WIFI-cracker
-use wordlist with metasploit after done.
-compatible only with python3
+Use wordlist with metasploit after done.
+This program is only compatible with python3 on kali linux.
